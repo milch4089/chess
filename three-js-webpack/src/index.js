@@ -109,7 +109,7 @@ if (WEBGL.isWebGLAvailable()) {
     '../static/texture/skybox/pz.png',
     '../static/texture/skybox/nz.png',
   ])
-  scene.background = skyboximgs
+  // scene.background = skyboximgs
   const board_texture = [
     textureLoader.load('../static/texture/board/Wood07_2K_BaseColor.png'),
     textureLoader.load('../static/texture/board/Wood07_2K_Normal.png'),
