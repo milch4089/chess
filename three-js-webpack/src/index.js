@@ -61,8 +61,8 @@ if (WEBGL.isWebGLAvailable()) {
   const light = new THREE.AmbientLight(0xffffff, 0.6)
   scene.add(light)
 
-  const helper = new THREE.CameraHelper(directionalLight.shadow.camera)
-  scene.add(helper)
+  // const helper = new THREE.CameraHelper(directionalLight.shadow.camera)
+  // scene.add(helper)
 
   //load souces
   const fontLoader = new THREE.FontLoader()
@@ -70,7 +70,7 @@ if (WEBGL.isWebGLAvailable()) {
   let rankTextMesh = []
   let FileTextMesh = []
 
-  fontLoader.load('../static/font/SB Aggro Medium_Regular.json', (font)=>{
+  fontLoader.load('static/font/SB Aggro Medium_Regular.json', (font)=>{
     let File = ["A", "B", "C", "D", "E", "F", "G", "H"]
     
     for (let x=0;x<2;x++) {
@@ -102,29 +102,29 @@ if (WEBGL.isWebGLAvailable()) {
 
   const textureLoader = new THREE.TextureLoader()
   const skyboximgs = new CubeTextureLoader().load([
-    '../static/texture/skybox/px.png',
-    '../static/texture/skybox/nx.png',
-    '../static/texture/skybox/py.png',
-    '../static/texture/skybox/ny.png',
-    '../static/texture/skybox/pz.png',
-    '../static/texture/skybox/nz.png',
+    'static/texture/skybox/px.png',
+    'static/texture/skybox/nx.png',
+    'static/texture/skybox/py.png',
+    'static/texture/skybox/ny.png',
+    'static/texture/skybox/pz.png',
+    'static/texture/skybox/nz.png',
   ])
   // scene.background = skyboximgs
   const board_texture = [
-    textureLoader.load('../static/texture/board/Wood07_2K_BaseColor.png'),
-    textureLoader.load('../static/texture/board/Wood07_2K_Normal.png'),
-    textureLoader.load('../static/texture/board/Wood07_2K_Roughness.png'),
-    textureLoader.load('../static/texture/board/Wood06_2K_BaseColor.png'),
-    textureLoader.load('../static/texture/board/Wood06_2K_Normal.png'),
-    textureLoader.load('../static/texture/board/Wood06_2K_Roughness.png'),
+    textureLoader.load('static/texture/board/Wood07_2K_BaseColor.png'),
+    textureLoader.load('static/texture/board/Wood07_2K_Normal.png'),
+    textureLoader.load('static/texture/board/Wood07_2K_Roughness.png'),
+    textureLoader.load('static/texture/board/Wood06_2K_BaseColor.png'),
+    textureLoader.load('static/texture/board/Wood06_2K_Normal.png'),
+    textureLoader.load('static/texture/board/Wood06_2K_Roughness.png'),
   ]
   const piece_texture = [
-    textureLoader.load('../static/texture/piece/Marble08_2K_BaseColor.png'),
-    textureLoader.load('../static/texture/piece/Marble08_2K_Normal.png'),
-    textureLoader.load('../static/texture/piece/Marble08_2K_Roughness.png'),
-    textureLoader.load('../static/texture/piece/Marble09_2K_BaseColor.png'),
-    textureLoader.load('../static/texture/piece/Marble09_2K_Normal.png'),
-    textureLoader.load('../static/texture/piece/Marble09_2K_Roughness.png'),
+    textureLoader.load('static/texture/piece/Marble08_2K_BaseColor.png'),
+    textureLoader.load('static/texture/piece/Marble08_2K_Normal.png'),
+    textureLoader.load('static/texture/piece/Marble08_2K_Roughness.png'),
+    textureLoader.load('static/texture/piece/Marble09_2K_BaseColor.png'),
+    textureLoader.load('static/texture/piece/Marble09_2K_Normal.png'),
+    textureLoader.load('static/texture/piece/Marble09_2K_Roughness.png'),
   ]
 
   // const skybox = textureLoader.load
@@ -178,7 +178,7 @@ if (WEBGL.isWebGLAvailable()) {
 
   for (let i = 0; i < 6; i++) {
 
-    loader.load(`../static/models/${i}.glb`, (glb) => {
+    loader.load(`static/models/${i}.glb`, (glb) => {
       glb.scene.traverse(function (node) {
         if (node.isMesh) {
           node.castShadow = true
